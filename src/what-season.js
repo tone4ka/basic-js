@@ -17,4 +17,3 @@ module.exports = function getSeason(date) {
         return 'autumn';
     }
 };
-// =['spring','summer','autumn','winter']
