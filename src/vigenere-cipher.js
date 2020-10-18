@@ -63,8 +63,21 @@ return result.join('');
     if(!message||!key)throw new Error();
     message=message.toUpperCase();
     key=key.toUpperCase();
+    let result=[];
+    let j=0;
+    for (let i=0; i<message.length; i++){
+      if(j>key.length-1)j=0;
+      if(this.alphabet.indexOf(message[i])!=-1){
 
-
+        let line=this.alphabet.indexOf(key[j]);
+        let indexAlph=this.vigenereSquare[line].indexOf(message[i]);
+        result.push(this.alphabet[indexAlph]);
+       j++; 
+      }else{
+        result.push(message[i]);
+      }
+    }
+    return result.join('');
   }
 }
 
